@@ -335,42 +335,10 @@ export const gallery = [
     caption: 'Every angle, even upside down, the answer is still you.',
     alt: 'Hiruni resting her chin on top of Hansika\'s head, photographed from below as he smiles',
   },
-
-  /* ---- The Tangled ones ---- */
   {
-    src: '/images/g1-lanterns.jpg',
-    caption: 'One day this. Real sky, real you, no screen in the way.',
-    alt: 'Rapunzel and Flynn sitting together by candlelight under a crescent moon',
-  },
-  {
-    src: '/images/g2-picnic.jpg',
-    caption: 'Doing absolutely nothing together. Top of my list.',
-    alt: 'Rapunzel and Flynn lying on a picnic blanket in a forest clearing',
-  },
-  {
-    src: '/images/g3-forest.jpg',
-    caption: 'Me, thinking about you. Which is most of the day, honestly.',
-    alt: 'Rapunzel looking up through sunlit trees',
-  },
-  {
-    src: '/images/g4-rose.jpg',
-    caption: 'Dressed up with nowhere to be but your call.',
-    alt: 'Rapunzel holding a white rose by candlelight',
-  },
-  {
-    src: '/images/g5-eyes.jpg',
-    caption: 'The way you look at me. Even through a phone. Even from there.',
-    alt: 'Close-ups of Flynn and Rapunzel looking at each other',
-  },
-  {
-    src: '/images/g6-dancing.jpg',
-    caption: 'How I feel when your name lights up my phone.',
-    alt: 'Rapunzel dancing and spinning in a field of flowers',
-  },
-  {
-    src: '/images/g7-pascal.jpg',
-    caption: 'Us. Someday. Same frame, same country, same everything.',
-    alt: 'Rapunzel and Flynn smiling down at the camera with Pascal',
+    src: '/images/us-coffee-smile.jpg',
+    caption: 'Just you, a paper cup of coffee and that smile. My favourite view in any country.',
+    alt: 'Hansika grinning at the camera while stirring a green paper cup at a café counter',
   },
 ]
 
