@@ -1,0 +1,41 @@
+.nf {
+  display: grid;
+  place-items: center;
+  background: var(--grad-soft);
+}
+
+.nf__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.nf__emoji {
+  font-size: 3rem;
+  animation: nfFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes nfFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(4deg);
+  }
+}
+
+.nf__code {
+  font-size: clamp(4rem, 18vw, 8rem);
+  line-height: 1;
+}
+
+.nf__text {
+  max-width: 40ch;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}

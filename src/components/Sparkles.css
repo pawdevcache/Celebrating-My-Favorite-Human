@@ -1,0 +1,45 @@
+.sp {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* A four-point star made from one element — no SVG needed. */
+.sp__star {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.4) rotate(0deg);
+  animation-name: spTwinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  clip-path: polygon(
+    50% 0%,
+    61% 39%,
+    100% 50%,
+    61% 61%,
+    50% 100%,
+    39% 61%,
+    0% 50%,
+    39% 39%
+  );
+}
+
+@keyframes spTwinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1) rotate(90deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp {
+    display: none;
+  }
+}

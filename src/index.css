@@ -1,0 +1,342 @@
+/* ============================================================
+   DESIGN TOKENS
+   Warm romantic base (rose / coral / peach / gold) widened with
+   lantern lilac, mint and sky so the site reads joyful rather than
+   tasteful-and-beige. Six accent hues, used as a rotating set.
+   ============================================================ */
+:root {
+  /* Romantic base */
+  --rose: #ff6b8a;
+  --rose-deep: #e14b6c;
+  --coral: #ff7f6b;
+  --peach: #ffb08a;
+  --gold: #e0a244;
+  --gold-soft: #f7dcae;
+
+  /* The wider set — lilac from the lanterns, mint + sky to cool it down */
+  --lilac: #b57edc;
+  --mint: #4fc9a4;
+  --sky: #62bde8;
+  --lemon: #ffd15c;
+
+  /* Neutrals */
+  --cream: #fff8f4;
+  --cream-2: #fdeee6;
+  --ink: #2b1a22;
+  --ink-soft: #6d5560;
+  --line: rgba(43, 26, 34, 0.1);
+  --white: #ffffff;
+
+  /* Gradients */
+  --grad-warm: linear-gradient(135deg, #ff6b8a 0%, #ff7f6b 45%, #ffb08a 100%);
+  --grad-soft: linear-gradient(160deg, #fff8f4 0%, #ffeee7 55%, #ffe3e8 100%);
+  --grad-gold: linear-gradient(120deg, #e0a244, #f7dcae 50%, #e0a244);
+  /* the full rainbow-ish one — for big moments only */
+  --grad-dream: linear-gradient(
+    135deg,
+    #ff6b8a 0%,
+    #ff7f6b 28%,
+    #ffb08a 48%,
+    #b57edc 76%,
+    #62bde8 100%
+  );
+  --grad-lilac: linear-gradient(135deg, #b57edc 0%, #d9bef5 100%);
+  --grad-mint: linear-gradient(135deg, #4fc9a4 0%, #b6efdc 100%);
+  --grad-sky: linear-gradient(135deg, #62bde8 0%, #bfe6f8 100%);
+  --grad-sunset: linear-gradient(135deg, #ffb08a 0%, #ff6b8a 52%, #b57edc 100%);
+  /* page washes */
+  --grad-page: linear-gradient(
+    170deg,
+    #fff8f4 0%,
+    #ffeef0 30%,
+    #f6edfd 62%,
+    #eef7fd 100%
+  );
+
+  /* Elevation */
+  --sh-sm: 0 2px 10px rgba(190, 90, 110, 0.08);
+  --sh-md: 0 12px 34px rgba(190, 90, 110, 0.14);
+  --sh-lg: 0 26px 70px rgba(160, 70, 95, 0.2);
+
+  /* Shape */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 32px;
+  --r-pill: 999px;
+
+  /* Type */
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body: 'Outfit', system-ui, -apple-system, sans-serif;
+  --f-hand: 'Caveat', cursive;
+
+  /* Layout */
+  --page-max: 1180px;
+  --nav-h: 74px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--f-body);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Grey iOS flash on tap, replaced with something that matches the site. */
+button,
+a,
+[role='button'] {
+  -webkit-tap-highlight-color: rgba(255, 107, 138, 0.16);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--rose);
+  color: #fff;
+}
+
+/* ---------- SHARED TYPE ---------- */
+.display {
+  font-family: var(--f-display);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.hand {
+  font-family: var(--f-hand);
+  font-size: 1.5rem;
+  color: var(--rose-deep);
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+.gradient-text {
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- LAYOUT ---------- */
+.shell {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  /* env() keeps content clear of the rounded corners / notch on phones.
+     It resolves to 0 everywhere else, so this costs nothing on desktop. */
+  padding-left: calc(clamp(1.15rem, 4vw, 2.5rem) + env(safe-area-inset-left));
+  padding-right: calc(clamp(1.15rem, 4vw, 2.5rem) + env(safe-area-inset-right));
+}
+
+.page {
+  padding-top: calc(var(--nav-h) + clamp(2rem, 6vw, 4.5rem));
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+  min-height: 100vh;
+  /* dvh tracks the shrinking/growing URL bar on mobile; vh above is the
+     fallback for browsers that do not know it. */
+  min-height: 100dvh;
+}
+
+.section {
+  padding-block: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+/* ---------- REUSABLE PIECES ---------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.7rem;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--grad-warm);
+  color: #fff;
+  box-shadow: var(--sh-md);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.22s ease;
+}
+
+/* Touch devices fire :hover on tap and then keep it until you tap elsewhere,
+   which leaves buttons stuck in their lifted state. Gate the lift on a real
+   pointer and give touch a press response instead. */
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sh-lg);
+  }
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.985);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  box-shadow: none;
+}
+
+@media (hover: hover) {
+  .btn-ghost:hover {
+    border-color: var(--rose);
+    color: var(--rose-deep);
+    box-shadow: var(--sh-sm);
+  }
+}
+
+/* Soft floating blobs used as page background decor */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blobs that drift, so backgrounds are never quite static. */
+.blob--drift {
+  animation: blobDrift 22s ease-in-out infinite alternate;
+}
+
+.blob--drift-2 {
+  animation: blobDrift2 28s ease-in-out infinite alternate;
+}
+
+@keyframes blobDrift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(46px, -38px) scale(1.14);
+  }
+}
+
+@keyframes blobDrift2 {
+  from {
+    transform: translate(0, 0) scale(1.08);
+  }
+  to {
+    transform: translate(-52px, 34px) scale(0.94);
+  }
+}
+
+/* ---------- ACCENT TONES ----------
+   Add `tone-1` … `tone-6` to any element to give it its own hue.
+   Components read these vars instead of hard-coding colours, so the
+   whole rotating set can be re-tuned from right here.
+
+   Each tone carries three values:
+     --tone       the flat hue, for text and borders
+     --tone-grad  the bright gradient, for accents on light backgrounds
+     --tone-deep  a darker gradient — the ONLY one safe behind white text
+   Reach for --tone-deep whenever the element has white text on it.
+------------------------------------------------------------------ */
+.tone-1 {
+  --tone: var(--rose);
+  --tone-grad: var(--grad-warm);
+  --tone-deep: linear-gradient(135deg, #ff6b8a 0%, #d83f61 100%);
+  --tone-wash: rgba(255, 107, 138, 0.12);
+}
+.tone-2 {
+  --tone: var(--lilac);
+  --tone-grad: var(--grad-lilac);
+  --tone-deep: linear-gradient(135deg, #a366d0 0%, #6f3f9e 100%);
+  --tone-wash: rgba(181, 126, 220, 0.14);
+}
+.tone-3 {
+  --tone: var(--gold);
+  --tone-grad: var(--grad-gold);
+  --tone-deep: linear-gradient(135deg, #c98d2b 0%, #9a6415 100%);
+  --tone-wash: rgba(224, 162, 68, 0.14);
+}
+.tone-4 {
+  --tone: var(--mint);
+  --tone-grad: var(--grad-mint);
+  --tone-deep: linear-gradient(135deg, #2fa385 0%, #16705a 100%);
+  --tone-wash: rgba(79, 201, 164, 0.14);
+}
+.tone-5 {
+  --tone: var(--sky);
+  --tone-grad: var(--grad-sky);
+  --tone-deep: linear-gradient(135deg, #3d9dcb 0%, #22688f 100%);
+  --tone-wash: rgba(98, 189, 232, 0.14);
+}
+.tone-6 {
+  --tone: var(--coral);
+  --tone-grad: var(--grad-sunset);
+  --tone-deep: linear-gradient(135deg, #f2634a 0%, #c8402a 100%);
+  --tone-wash: rgba(255, 127, 107, 0.13);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

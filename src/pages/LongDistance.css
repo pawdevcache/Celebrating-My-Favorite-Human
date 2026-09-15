@@ -1,0 +1,466 @@
+.ld {
+  position: relative;
+  overflow: hidden;
+  background: var(--grad-page);
+}
+
+.ld__blob--1 {
+  width: 400px;
+  height: 400px;
+  top: 8%;
+  left: -160px;
+  background: var(--rose);
+  opacity: 0.2;
+}
+
+.ld__blob--2 {
+  width: 420px;
+  height: 420px;
+  bottom: 6%;
+  right: -170px;
+  background: var(--peach);
+  opacity: 0.28;
+}
+
+/* ---- Map band ---- */
+.ld__map {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: clamp(1.8rem, 5vw, 2.8rem);
+  border-radius: var(--r-lg);
+  background: var(--grad-soft);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-sm);
+}
+
+.ld__side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ld__avatar {
+  width: clamp(84px, 22vw, 112px);
+  height: clamp(84px, 22vw, 112px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--white);
+  box-shadow: var(--sh-md);
+  background: var(--cream-2);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) {
+  .ld__side:hover .ld__avatar {
+    transform: scale(1.06);
+  }
+}
+
+.ld__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ld__who {
+  margin-top: 0.4rem;
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ld__city {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- The line between them ---- */
+.ld__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding-block: 0.5rem;
+}
+
+.ld__dash {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2px;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--rose) 45%,
+    transparent 45%
+  );
+  background-size: 2px 12px;
+  opacity: 0.5;
+}
+
+.ld__link-badge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--r-md);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-md);
+}
+
+.ld__km {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.3rem);
+  line-height: 1;
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ld__km-unit {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.ld__miles {
+  font-family: var(--f-hand);
+  font-size: 0.95rem;
+  color: var(--rose-deep);
+}
+
+.ld__tz {
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed rgba(255, 107, 138, 0.3);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.ld__plane {
+  position: relative;
+  font-size: 1.3rem;
+  animation: ldFly 5s ease-in-out infinite;
+}
+
+@keyframes ldFly {
+  0%,
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(90deg);
+  }
+}
+
+/* ---- Prose ---- */
+.ld__section {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.ld__prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 66ch;
+  margin-inline: auto;
+}
+
+.ld__prose p {
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.ld__prose p:first-child::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  font-family: var(--f-display);
+  font-size: 3.2em;
+  line-height: 0.82;
+  font-weight: 700;
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Bridges ---- */
+.ld__h3 {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  text-align: center;
+}
+
+.ld__bridges {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ld__bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+  border-radius: var(--r-md);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .ld__bridge:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sh-md);
+  }
+}
+
+.ld__bridge-emoji {
+  font-size: 1.7rem;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) {
+  .ld__bridge:hover .ld__bridge-emoji {
+    transform: scale(1.15) rotate(-8deg);
+  }
+}
+
+.ld__bridge-title {
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.ld__bridge-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* ---- A photo inside a card ----
+   Sits under the card's text like a snapshot. 4:5 rather than the photo's
+   full 3:4 so it does not tower over the text-only cards beside it;
+   object-position keeps the faces, which sit in the upper part, in frame. */
+.ld__bridge-photo {
+  width: 100%;
+  margin: 0.7rem 0 0;
+  padding: 6px 6px 6px;
+  background: var(--white);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh-sm);
+  transform: rotate(-1.2deg);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ld__bridge-photo img {
+  display: block;
+  width: 100%;
+  /* a card can override these from site.js (imageAspect / imageFocus) */
+  aspect-ratio: var(--photo-aspect, 4 / 5);
+  object-fit: cover;
+  object-position: var(--photo-focus, 50% 30%);
+  border-radius: 3px;
+  background: var(--cream-2);
+}
+
+@media (hover: hover) {
+  .ld__bridge:hover .ld__bridge-photo {
+    transform: rotate(0.8deg) scale(1.02);
+  }
+}
+
+/* ---- Our song ----
+   Shows the video's thumbnail with a play button, and only swaps in the real
+   YouTube iframe when tapped. Embedding the iframe up front would load
+   YouTube's player scripts for every visitor to this page, whether they
+   press play or not. */
+.ld__song {
+  width: 100%;
+  margin-top: 0.7rem;
+}
+
+.ld__song-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background: #1c1216;
+  box-shadow: var(--sh-sm);
+}
+
+.ld__song-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.ld__song-poster {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* YouTube's hqdefault thumbnail is 4:3 with black bars; cover crops them */
+.ld__song-poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ld__song-poster::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28, 18, 22, 0.55), rgba(28, 18, 22, 0.1));
+}
+
+.ld__song-play {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--grad-warm);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* play triangle, nudged right so it looks optically centred */
+.ld__song-play::before {
+  content: '';
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent #fff;
+}
+
+@media (hover: hover) {
+  .ld__song-poster:hover img {
+    transform: scale(1.05);
+  }
+  .ld__song-poster:hover .ld__song-play {
+    transform: scale(1.1);
+  }
+}
+
+.ld__song-poster:active .ld__song-play {
+  transform: scale(0.94);
+}
+
+.ld__song-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--f-hand);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: var(--rose-deep);
+}
+
+/* ---- Next meetup ---- */
+.ld__next {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.2rem, 4vw, 2.5rem);
+  text-align: center;
+  border-radius: var(--r-lg);
+  background: var(--grad-soft);
+  border: 1px dashed rgba(255, 107, 138, 0.4);
+}
+
+.ld__next-title {
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  margin-bottom: 0.8rem;
+}
+
+@media (min-width: 760px) {
+  .ld__map {
+    grid-template-columns: 1fr auto 1fr;
+    gap: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .ld__link {
+    flex-direction: row;
+    gap: 0.9rem;
+    padding-inline: 0.5rem;
+  }
+
+  .ld__dash {
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, var(--rose) 45%, transparent 45%);
+    background-size: 12px 2px;
+  }
+
+  .ld__plane {
+    animation-name: ldFlyX;
+  }
+
+  @keyframes ldFlyX {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+  }
+
+}
+
+/* Two across on tablets, four only on wide screens. Going straight to four
+   at 760px squeezed the song card's YouTube player down to 124×70, and even
+   at 940px it was only 164×92 — 1080px is where four columns leave the
+   player around 200px wide. */
+@media (min-width: 560px) {
+  .ld__bridges {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .ld__bridges {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

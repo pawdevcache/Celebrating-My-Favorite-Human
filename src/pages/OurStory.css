@@ -1,0 +1,182 @@
+.story {
+  position: relative;
+  overflow: hidden;
+  background: var(--grad-page);
+}
+
+.story__blob {
+  width: 420px;
+  height: 420px;
+  top: 4%;
+  right: -160px;
+  background: var(--peach);
+  opacity: 0.32;
+}
+
+.story__blob--2 {
+  width: 380px;
+  height: 380px;
+  bottom: 10%;
+  left: -150px;
+  background: var(--lilac);
+  opacity: 0.28;
+}
+
+.tl {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tl__item {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: clamp(0.9rem, 2.5vw, 1.5rem);
+}
+
+/* ---- Marker column ---- */
+.tl__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tl__dot {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid color-mix(in srgb, var(--tone) 45%, transparent);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--tone) 26%, transparent);
+  font-size: 1.15rem;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.3s ease, background 0.3s ease;
+}
+
+@media (hover: hover) {
+  .tl__item:hover .tl__dot {
+    transform: scale(1.14);
+    border-color: transparent;
+    background: var(--tone-wash);
+  }
+}
+
+/* the line fades from this chapter's colour toward the next */
+.tl__line {
+  flex: 1;
+  width: 2px;
+  min-height: 30px;
+  margin-block: 6px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--tone) 60%, transparent),
+    color-mix(in srgb, var(--tone) 12%, transparent)
+  );
+}
+
+/* ---- Card ---- */
+.tl__card {
+  position: relative;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.6rem;
+  overflow: hidden;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.32s ease;
+}
+
+/* a stripe of this chapter's colour down the card */
+.tl__card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--tone-grad);
+}
+
+@media (hover: hover) {
+  .tl__item:hover .tl__card {
+    transform: translateX(5px);
+    box-shadow: 0 16px 38px color-mix(in srgb, var(--tone) 22%, transparent);
+  }
+}
+
+.tl__date {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--r-pill);
+  background: var(--tone-wash);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--tone) 80%, var(--ink));
+}
+
+.tl__title {
+  margin-top: 0.7rem;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+}
+
+.tl__text {
+  margin-top: 0.55rem;
+  max-width: 62ch;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.story__end {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+}
+
+@media (min-width: 860px) {
+  .tl__item {
+    grid-template-columns: 1fr 46px 1fr;
+  }
+
+  /* Zig-zag: odd chapters left, even chapters right */
+  .tl__item:nth-child(odd) .tl__card {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .tl__item:nth-child(odd) .tl__text {
+    margin-left: auto;
+  }
+
+  .tl__item:nth-child(odd) .tl__marker {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .tl__item:nth-child(even) .tl__marker {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .tl__item:nth-child(even) .tl__card {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .tl__item:nth-child(odd):hover .tl__card {
+    transform: translateX(-5px);
+  }
+
+  /* on the zig-zag, the stripe belongs on the side facing the line */
+  .tl__item:nth-child(odd) .tl__card::before {
+    inset: 0 0 0 auto;
+  }
+}

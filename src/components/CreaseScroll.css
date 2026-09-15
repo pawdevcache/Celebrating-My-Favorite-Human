@@ -1,0 +1,82 @@
+/* A cricket ball rolling down the crease as you scroll the page. */
+.crease {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 16px;
+  pointer-events: none;
+}
+
+.crease__line {
+  position: relative;
+  /* leave room so the ball never overhangs the viewport edge */
+  width: calc(100% - 18px);
+  height: 100%;
+}
+
+/* the crease itself — a faint dashed pitch marking */
+.crease__line::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: -18px;
+  height: 2px;
+  transform: translateY(-50%);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 107, 138, 0.4) 50%,
+    transparent 50%
+  );
+  background-size: 8px 2px;
+}
+
+/* the part already rolled over gets a warm solid line */
+.crease__line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  width: calc(var(--pct, 0) * 100%);
+  transform: translateY(-50%);
+  border-radius: 2px;
+  background: var(--grad-warm);
+  opacity: 0.85;
+}
+
+.crease__ball {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 34% 28%,
+    #e0596d 0%,
+    #a81f33 44%,
+    #641021 100%
+  );
+  box-shadow: inset -2px -3px 5px rgba(0, 0, 0, 0.45),
+    0 3px 7px rgba(100, 16, 33, 0.4);
+  will-change: transform;
+}
+
+.crease__seam {
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 240, 220, 0.9);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(34deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crease {
+    display: none;
+  }
+}

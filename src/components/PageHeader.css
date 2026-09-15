@@ -1,0 +1,37 @@
+.ph {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-bottom: clamp(2rem, 5vw, 3.25rem);
+}
+
+.ph__title {
+  margin-top: 0.7rem;
+  font-size: clamp(2.3rem, 7vw, 4rem);
+}
+
+.ph__lead {
+  margin-top: 1rem;
+  max-width: 58ch;
+  font-size: clamp(1rem, 2vw, 1.14rem);
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.ph__rule {
+  display: block;
+  width: 84px;
+  height: 4px;
+  margin-top: 1.6rem;
+  border-radius: 4px;
+  transform-origin: left;
+  background: var(--grad-warm);
+}
+
+/* Accent variant — recolours the eyebrow + rule */
+.ph--gold .eyebrow {
+  color: var(--gold);
+}
+.ph--gold .ph__rule {
+  background: var(--grad-gold);
+}

@@ -1,0 +1,255 @@
+.reasons {
+  position: relative;
+  overflow: hidden;
+  background: var(--grad-page);
+}
+
+.reasons__blob--1 {
+  width: 400px;
+  height: 400px;
+  top: 6%;
+  left: -150px;
+  background: var(--rose);
+  opacity: 0.24;
+}
+
+.reasons__blob--2 {
+  width: 360px;
+  height: 360px;
+  bottom: 8%;
+  right: -140px;
+  background: var(--lilac);
+  opacity: 0.28;
+}
+
+.reasons__blob--3 {
+  width: 320px;
+  height: 320px;
+  top: 44%;
+  right: 8%;
+  background: var(--sky);
+  opacity: 0.2;
+}
+
+/* ---- Progress bar row ---- */
+.reasons__bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.reasons__progress {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.reasons__progress strong {
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  color: var(--rose-deep);
+}
+
+.reasons__all {
+  min-height: 44px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* ---- Grid ---- */
+.reasons__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ---- The flip card ----
+   The outer button owns the perspective; .flip__inner does the rotation
+   so both faces turn together. */
+.flip {
+  display: block;
+  width: 100%;
+  /* Both faces are absolutely positioned, so the card cannot grow to fit
+     its text — the height has to be tall enough for the longest reason.
+     The longest one needs ~165px of the 180px this leaves at 390px wide,
+     and less room than that on a narrow phone, so it scales with the
+     viewport instead of sitting at a flat 230px. */
+  height: clamp(230px, 62vw, 268px);
+  padding: 0;
+  perspective: 1400px;
+  background: none;
+  text-align: left;
+  touch-action: manipulation;
+}
+
+.flip__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flip.is-flipped .flip__inner {
+  transform: rotateY(180deg);
+}
+
+/* Guarded on a real pointer: on touch this lift sticks after the tap and
+   fights the flip animation. */
+@media (hover: hover) {
+  .flip:not(.is-flipped):hover .flip__inner {
+    transform: translateY(-6px) rotateY(0deg);
+  }
+}
+
+.flip__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1.4rem;
+  border-radius: var(--r-md);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: var(--sh-sm);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .flip:hover .flip__face {
+    box-shadow: var(--sh-md);
+  }
+}
+
+/* --- Front --- */
+.flip__face--front {
+  background: var(--white);
+  border: 1px solid var(--line);
+  align-items: flex-start;
+}
+
+/* a stripe of the card's own colour down its left edge */
+.flip__face--front::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--tone-grad);
+}
+
+.flip__num {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--tone-wash);
+  font-family: var(--f-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--tone) 82%, var(--ink));
+  transition: background 0.3s ease;
+}
+
+@media (hover: hover) {
+  .flip:hover .flip__num {
+    background: var(--tone-grad);
+    color: #fff;
+  }
+}
+
+.flip__front-text {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.flip__hint {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .flip:hover .flip__hint {
+    opacity: 1;
+    color: var(--rose-deep);
+  }
+}
+
+/* --- Back --- */
+.flip__face--back {
+  transform: rotateY(180deg);
+  /* --tone-deep, not --tone-grad: this face has white text on it */
+  background: var(--tone-deep);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* soft light bloom in the corner of the back face */
+.flip__face--back::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.flip__heart {
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.flip__back-text {
+  position: relative;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.reasons__end {
+  position: relative;
+  z-index: 1;
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+}
+
+@media (min-width: 620px) {
+  .reasons__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .reasons__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .flip {
+    height: 250px;
+  }
+}
