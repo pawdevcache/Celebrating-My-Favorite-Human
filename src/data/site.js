@@ -332,7 +332,7 @@ export const gallery = [
   },
   {
     src: '/images/us-upside-down.jpg',
-    caption: 'Just a little kiss to show him all the love I can’t put into words. 🥹❤️',
+    caption: 'Just a little kiss to show you all the love I can’t put into words. 🥹❤️',
     alt: 'Hiruni resting her chin on top of Hansika\'s head, photographed from below as he smiles',
   },
   {
