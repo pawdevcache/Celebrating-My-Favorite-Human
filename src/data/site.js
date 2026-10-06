@@ -340,6 +340,41 @@ export const gallery = [
     caption: 'Just you, a paper cup of coffee and that smile. My favourite view in any country.',
     alt: 'Hansika grinning at the camera while stirring a green paper cup at a café counter',
   },
+  {
+    src: '/images/us-flowers.jpg',
+    caption: 'Flowers, a full room, everybody watching — and I still only looked at you.',
+    alt: 'Hansika holding Hiruni close as she holds a bouquet, family around them indoors',
+  },
+  {
+    src: '/images/us-family.jpg',
+    caption: 'One arm around each of us. I love how easily I fit into your world.',
+    alt: 'Hiruni, Hansika and a family member standing together outdoors with his arms around them',
+  },
+  {
+    src: '/images/us-chin.jpg',
+    caption: 'Holding your chin like something I won. You let me. You always let me.',
+    alt: 'Hiruni holding Hansika\'s chin as they both grin at a night-time selfie',
+  },
+  {
+    src: '/images/us-eyelashes.jpg',
+    caption: 'Close enough to count your eyelashes, and still not close enough.',
+    alt: 'An extreme close-up of their two faces pressed cheek to cheek, both eyes to camera',
+  },
+  {
+    src: '/images/us-beach-bar.jpg',
+    caption: 'Sea behind you, drink in hand, not a worry in sight. Keep that face for me.',
+    alt: 'Hansika in sunglasses at a beachside bar holding a glass, waves behind him',
+  },
+  {
+    src: '/images/us-stone-age.jpg',
+    caption: 'Give me a cave and a club and I would still come looking for you. Some things were always going to happen.',
+    alt: 'Hiruni and Hansika in a Stone Age themed photo shoot, in fur costumes with face paint against a cave wall',
+  },
+  {
+    src: '/images/us-vintage.jpg',
+    caption: 'Another century, same two people. I would have found you in any of them.',
+    alt: 'A sepia-toned vintage style portrait of Hansika in a pinstripe suit and hat beside Hiruni in a beaded dress',
+  },
 ]
 
 /* ---------- FOOTER ---------- */
