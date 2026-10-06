@@ -307,17 +307,17 @@ export const gallery = [
   /* ---- Us, for real ---- */
   {
     src: '/images/us-fairy-lights.jpg',
-    caption: 'Laughing so hard the camera could not keep up. My favourite blurry photo of all time.',
+    caption: 'Time could take us anywhere, I’d still want to end up beside you. 🤎',
     alt: 'Hiruni and Hansika laughing in a night-time selfie under string lights',
   },
   {
     src: '/images/us-palm-shade.jpg',
-    caption: 'Sun on my face, you right behind me. I would stay in this second forever.',
+    caption: 'Forever grateful for the way we randomly found each other.',
     alt: 'Hansika and Hiruni in sunglasses sitting together under a wooden shade with palm trees',
   },
   {
     src: '/images/us-squish.jpg',
-    caption: 'You holding my face like it belongs to you. It does.',
+    caption: 'As far as people go, I get to love the best one ❤️',
     alt: 'Hansika holding Hiruni\'s cheeks as they lean in close',
   },
   {
@@ -332,47 +332,47 @@ export const gallery = [
   },
   {
     src: '/images/us-upside-down.jpg',
-    caption: 'Every angle, even upside down, the answer is still you.',
+    caption: 'Just a little kiss to show him all the love I can’t put into words. 🥹❤️',
     alt: 'Hiruni resting her chin on top of Hansika\'s head, photographed from below as he smiles',
   },
   {
     src: '/images/us-coffee-smile.jpg',
-    caption: 'Just you, a paper cup of coffee and that smile. My favourite view in any country.',
+    caption: 'Love is sharing your food… except when it’s the last bite. ',
     alt: 'Hansika grinning at the camera while stirring a green paper cup at a café counter',
   },
   {
     src: '/images/us-flowers.jpg',
-    caption: 'Flowers, a full room, everybody watching — and I still only looked at you.',
+    caption: 'Found my favourite person to annoy for the rest of my life. 😂❤️',
     alt: 'Hansika holding Hiruni close as she holds a bouquet, family around them indoors',
   },
   {
     src: '/images/us-family.jpg',
-    caption: 'One arm around each of us. I love how easily I fit into your world.',
+    caption: 'I love how effortlessly I fit into your life. 🤍',
     alt: 'Hiruni, Hansika and a family member standing together outdoors with his arms around them',
   },
   {
     src: '/images/us-chin.jpg',
-    caption: 'Holding your chin like something I won. You let me. You always let me.',
+    caption: 'somewhere between love and best friends. 🤍',
     alt: 'Hiruni holding Hansika\'s chin as they both grin at a night-time selfie',
   },
   {
     src: '/images/us-eyelashes.jpg',
-    caption: 'Close enough to count your eyelashes, and still not close enough.',
+    caption: 'If looks could tell our whole story. ❤️',
     alt: 'An extreme close-up of their two faces pressed cheek to cheek, both eyes to camera',
   },
   {
     src: '/images/us-beach-bar.jpg',
-    caption: 'Sea behind you, drink in hand, not a worry in sight. Keep that face for me.',
+    caption: 'Somehow, you became my favourite part of every day. 🥹❤️',
     alt: 'Hansika in sunglasses at a beachside bar holding a glass, waves behind him',
   },
   {
     src: '/images/us-stone-age.jpg',
-    caption: 'Give me a cave and a club and I would still come looking for you. Some things were always going to happen.',
+    caption: 'you’re my favourite person, my favourite place, my favourite everything 🤍',
     alt: 'Hiruni and Hansika in a Stone Age themed photo shoot, in fur costumes with face paint against a cave wall',
   },
   {
     src: '/images/us-vintage.jpg',
-    caption: 'Another century, same two people. I would have found you in any of them.',
+    caption: 'Us, if we had met in the ’20s. 🤍',
     alt: 'A sepia-toned vintage style portrait of Hansika in a pinstripe suit and hat beside Hiruni in a beaded dress',
   },
 ]
