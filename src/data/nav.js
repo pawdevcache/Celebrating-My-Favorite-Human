@@ -6,6 +6,5 @@ export const links = [
   { to: '/our-story', label: 'Our Story' },
   { to: '/reasons', label: 'Reasons' },
   { to: '/gallery', label: 'Gallery' },
-  { to: '/long-distance', label: 'The Distance' },
   { to: '/letter', label: 'Letter' },
 ]

@@ -32,13 +32,7 @@ const cards = [
     title: 'Gallery',
     text: 'Every photo I have of you, in one place.',
   },
-  {
-    to: '/long-distance',
-    emoji: '🌍',
-    title: 'The Distance',
-    text: 'The kilometres between us, and why they lose.',
-  },
-  {
+    {
     to: '/letter',
     emoji: '💌',
     title: 'Your Letter',

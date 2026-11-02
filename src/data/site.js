@@ -22,15 +22,6 @@ export const her = {
   name2: 'Sudu Nona',                    
 }
 
-/* Distance between you two — used on the Long Distance page. */
-export const distance = {
-  km: 8227,                          // great-circle distance, southern Sri Lanka -> Melbourne
-  milesLabel: '5,112 miles',
-  hoursApart: 5.5,                   // Melbourne is 5.5 hrs ahead of Sri Lanka in November
-  nextMeetup: '2027-12-20',          // YYYY-MM-DD — leave '' to hide this counter
-  nextMeetupLabel: 'the day I finally get to hug you again',
-}
-
 /* ---------- IMAGES ----------
    These are placeholders right now. To use real photos:
    1. Drop your photos into the  public/images/  folder
@@ -41,12 +32,10 @@ const ph = (seed, w = 900, h = 1200) =>
   `https://picsum.photos/seed/${seed}/${w}/${h}`
 
 export const images = {
-  hero: '/images/little-us.jpg',     // real image — lives in public/images/
-  heroAlt: 'Two small children sitting side by side holding a cake that reads Happy 27th Birthday, with balloons and a teddy bear behind them',
-  letter: '/images/us.png',          // real image — lives in public/images/
-  letterAlt: 'A collage of photos of Hansika and Hiruni together',
-  distanceHer: ph('her-side', 800, 800),
-  distanceHim: ph('his-side', 800, 800),
+  hero: '/images/birthday-hug.jpg',     // real image — lives in public/images/
+  heroAlt: 'A little girl in a pink dress hugging and kissing a little boy on the cheek, with a Happy 27th Birthday cake, balloons and a teddy bear around them',
+  letter: '/images/letter-pastel.jpg', // real image — lives in public/images/
+  letterAlt: 'A little girl in a pink dress and a little boy sitting side by side behind a Happy 27th Birthday cake, with pastel balloons and a teddy bear around them',
 }
 
 /* ---------- HOME PAGE ---------- */
@@ -200,60 +189,6 @@ export const reasons = [
     back: 'One birthday down, and hopefully so many more where I get to celebrate you, love you, and remind you how special you are.',
   },
 ]
-
-/* ---------- LONG DISTANCE PAGE ---------- */
-export const longDistance = {
-  intro:
-    'The hardest page to write and the one I mean the most.',
-  body: [
-    'I am not there today. I hate that. I wanted to be the first face you saw and the one holding the cake and the one who got to watch you make the wish.',
-    'So I did the only thing I could do from here. I took every place I would rather be standing and I turned it into a page.',
-    'Distance is just a number. It is a big, annoying, expensive number but it is only a number. What it is not is a reason. It has never once been a reason.',
-    'One day this page will be a story we tell. "There was a year we were apart on your birthday." One year out of all of them. I can live with that ratio.',
-  ],
-  /* Small things that close the gap */
-  bridges: [
-    {
-      emoji: '📞',
-      title: 'Every night',
-      text: 'Your night is my afternoon. We find the hour anyway, every single day.',
-      image: '/images/every-night.jpg',
-      imageAlt: 'A video call screenshot: Hansika asleep on his pillow while Hiruni is still on the call',
-      /* This one is a tall phone screenshot, so it gets a phone-shaped frame,
-         positioned to keep both her little window and his face in view. */
-      imageAspect: '9 / 17',
-      imageFocus: '50% 45%',
-    },
-    {
-      emoji: '🎧',
-      title: 'Same song',
-      text: 'Press play at the same second and pretend we are in the same room.',
-      /* Paste any YouTube link here — a youtu.be share link or a normal
-         youtube.com/watch link both work. Leave '' to hide the player. */
-      youtube: 'https://youtu.be/dB2GMQYTXGU',
-      songLabel: 'Me Hitha Sanasa — Uvindu Ayshcharya',
-    },
-    {
-      emoji: '📷',
-      title: 'Same sky',
-      text: 'You get the sunset five and a half hours before me. You always send it.',
-      /* A photo shown in this card. Leave '' to hide it. */
-      image: '/images/same-sky.jpg',
-      imageAlt: 'Hansika and Hiruni in sunglasses under a wooden shade, blue sky behind them',
-    },
-    {
-      emoji: '✈️',
-      title: 'The next ticket',
-      text: 'Already thinking about it. Always already thinking about it.',
-      image: '/images/air.jpg',
-      imageAlt: 'A boarding pass with a plane on it',
-      /* The ticket is a wide strip in the middle of a square image, so the
-         frame is cropped to the ticket's own shape. */
-      imageAspect: '12 / 5',
-      imageFocus: '50% 49%',
-    },
-  ],
-}
 
 /* ---------- THE BIRTHDAY LETTER ---------- */
 export const letter = {

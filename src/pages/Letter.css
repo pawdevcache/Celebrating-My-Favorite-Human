@@ -120,9 +120,9 @@
 .lt__photo {
   position: relative;
   float: right;
-  /* a little wider than before — the collage has nine photos in it and
-     reads as texture if it is shrunk too far */
-  width: clamp(140px, 36%, 240px);
+  /* wide enough that the two faces still read at the smallest size the
+     text column allows */
+  width: clamp(150px, 38%, 250px);
   margin: 0.4rem 0 1.2rem 1.5rem;
   padding: 8px 8px 26px;
   background: #fff;
@@ -140,9 +140,9 @@
 
 .lt__photo img {
   width: 100%;
-  /* 3:4 portrait to match the collage, so nothing is cropped — a square
-     frame cut off faces along the top row and the couple's feet */
-  aspect-ratio: 3 / 4;
+  /* 15:16 to match the photo, which is almost square — a 3:4 portrait
+     frame cropped the balloons and the teddy off either side */
+  aspect-ratio: 15 / 16;
   object-fit: cover;
   border-radius: 2px;
   background: var(--cream-2);
