@@ -370,11 +370,6 @@ export const gallery = [
     caption: 'you’re my favourite person, my favourite place, my favourite everything 🤍',
     alt: 'Hiruni and Hansika in a Stone Age themed photo shoot, in fur costumes with face paint against a cave wall',
   },
-  {
-    src: '/images/us-vintage.jpg',
-    caption: 'Us, if we had met in the ’20s. 🤍',
-    alt: 'A sepia-toned vintage style portrait of Hansika in a pinstripe suit and hat beside Hiruni in a beaded dress',
-  },
 ]
 
 /* ---------- FOOTER ---------- */
