@@ -143,7 +143,10 @@
 
 .hero__frame {
   position: relative;
-  padding: 14px 14px 60px;
+  /* The caption lives inside this frame now, so the white strip below the
+     photo grows to fit it — a fixed 60px strip only ever suited a one-line
+     caption, and a longer one spilled off the bottom of the polaroid. */
+  padding: 14px 14px 16px;
   background: #fff;
   border-radius: 6px;
   box-shadow: var(--sh-lg);
@@ -159,8 +162,9 @@
 
 .hero__frame img {
   width: 100%;
-  /* 3:4 to match the photo — at 4:5 the top of the party hat was cropped */
-  aspect-ratio: 3 / 4;
+  /* 15:16 to match the photo, which is almost square — the old 3:4 frame
+     cropped the balloons off either side */
+  aspect-ratio: 15 / 16;
   object-fit: cover;
   border-radius: 3px;
   background: var(--cream-2);
@@ -182,21 +186,27 @@
   transform: rotate(-32deg);
 }
 
+/* positioned against .hero__shot, so it hugs the photo's corner. Kept just
+   inside the photo rather than hanging below it, where it crossed the
+   caption's first line. */
 .hero__tape--br {
-  /* up on the photo's corner, clear of the 60px caption strip — lower down it
-     covered the emoji at the end of a longer caption */
-  bottom: 64px;
+  bottom: 12px;
   right: clamp(-20px, -3vw, -8px);
   transform: rotate(-28deg);
   background: rgba(255, 107, 138, 0.45);
 }
 
+.hero__shot {
+  position: relative;
+}
+
 .hero__caption {
-  margin-top: -46px;
+  margin-top: 0.85rem;
   position: relative;
   z-index: 1;
   text-align: center;
-  font-size: 1.35rem;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 /* ---- Scroll hint ---- */
@@ -419,7 +429,7 @@
   height: 46px;
   border-radius: 14px;
   background: var(--tone-wash);
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   line-height: 1;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     background 0.3s ease;

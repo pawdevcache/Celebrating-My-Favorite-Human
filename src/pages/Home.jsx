@@ -126,11 +126,15 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="hero__frame">
-              <img src={images.hero} alt={images.heroAlt} loading="eager" />
+              {/* the photo and its tape, so the tape stays on the picture's
+                  corner however tall the caption below it grows */}
+              <div className="hero__shot">
+                <img src={images.hero} alt={images.heroAlt} loading="eager" />
+                <div className="hero__tape hero__tape--br" />
+              </div>
               <div className="hero__tape hero__tape--tl" />
-              <div className="hero__tape hero__tape--br" />
+              <p className="hero__caption hand">{home.caption}</p>
             </div>
-            <p className="hero__caption hand">{home.caption}</p>
           </motion.div>
         </div>
 

@@ -41,8 +41,8 @@ const ph = (seed, w = 900, h = 1200) =>
   `https://picsum.photos/seed/${seed}/${w}/${h}`
 
 export const images = {
-  hero: '/images/little%20him.jpg',  // real image — lives in public/images/ (%20 = the space in the filename)
-  heroAlt: 'Hansika as a little boy in a party hat, smiling behind a keyboard',
+  hero: '/images/little-us.jpg',     // real image — lives in public/images/
+  heroAlt: 'Two small children sitting side by side holding a cake that reads Happy 27th Birthday, with balloons and a teddy bear behind them',
   letter: '/images/us.png',          // real image — lives in public/images/
   letterAlt: 'A collage of photos of Hansika and Hiruni together',
   distanceHer: ph('her-side', 800, 800),
@@ -56,7 +56,8 @@ export const home = {
     'You are one whole year older, still one year ahead of me, and somehow still the best thing that has ever happened to my ordinary days.',
   scrollHint: 'there is more, keep going',
   /* The handwritten line under the polaroid */
-  caption: 'birthday boy, before he knew me 🥹❤️',
+  caption:
+    'Somehow, our little versions look so cute together, with a lifetime of wishes waiting to come true. Happy 27th birthday to my favourite boy! ❤️🥹',
   /* The three little stat cards under the countdown */
   stats: [
     { value: '1st', label: 'birthday together' },
