@@ -179,8 +179,7 @@ export default function NotOut() {
             </div>
 
             <p className="no__batsman">
-              {him.name}
-              <em>“{him.nickname2}”</em>
+              {him.nickname3}
             </p>
 
             <p className="no__score">

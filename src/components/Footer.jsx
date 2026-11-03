@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
 
         <p className="ft__line display">
-          Sending love from {her.city} to {him.city} 🫣
+          Across the miles, with all my love. ❤️
         </p>
 
         <p className="ft__sub">{footer.line}</p>
@@ -26,7 +26,7 @@ export default function Footer() {
         </nav>
 
         <p className="ft__heart">
-          made with <span aria-label="love">❤️</span> across the distance
+          Made special just for you. ❤️
         </p>
       </div>
     </footer>

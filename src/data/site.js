@@ -8,8 +8,9 @@
 /* ---------- THE BASICS ---------- */
 export const him = {
   name: 'Hansika',                   // <- his name
-  nickname: 'My Superman',           // shown on the home page as "To My Superman —"
-  nickname2: 'Sudu Patiya',          // shown on the cricket scoreboard, like a player's nickname
+  nickname: 'My favourite boy',           // shown on the home page as "To My Superman —"
+  nickname2: 'Sudu Patiya',
+  nickname3: 'Hans',          // shown on the cricket scoreboard, like a player's nickname
   birthday: '2026-11-13',            // YYYY-MM-DD — his next birthday
   turningAge: 27,                    // the age he's turning — this is his "score"
   birthYear: 1999,                   // <- the year he was born (powers the "balls faced" count)
