@@ -20,7 +20,7 @@ export const him = {
 export const her = {
   name: 'Hiruni',                    // <- your name
   city: 'Sri Lanka',                 // where you are
-  name2: 'Sudu Nona',                    
+  name2: 'Sudu Baba',                    
 }
 
 /* ---------- IMAGES ----------
