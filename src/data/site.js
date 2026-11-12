@@ -47,7 +47,7 @@ export const home = {
   scrollHint: 'there is more, keep going',
   /* The handwritten line under the polaroid */
   caption:
-    'Somehow, our little versions look so cute together, with a lifetime of wishes waiting to come true. Happy 27th birthday to my favourite boy! ❤️🥹',
+    'Our little versions look so cute together, with a lifetime of wishes waiting to come true. Happy 27th birthday to my favourite boy! ❤️🥹',
   /* The three little stat cards under the countdown */
   stats: [
     { value: '1st', label: 'birthday together' },
