@@ -307,6 +307,11 @@ export const gallery = [
     caption: 'you’re my favourite person, my favourite place, my favourite everything 🤍',
     alt: 'Hiruni and Hansika in a Stone Age themed photo shoot, in fur costumes with face paint against a cave wall',
   },
+  {
+    src: '/images/us-graduation-call.jpg',
+    caption: 'Every beautiful moment becomes even more meaningful when you are part of it.🎓🤍',
+    alt: 'Hiruni in a graduation gown holding red roses, on a video call with Hansika on her phone',
+  },
 ]
 
 /* ---------- FOOTER ---------- */
