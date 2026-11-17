@@ -2,18 +2,13 @@ import { useEffect, useState } from 'react'
 import './Countdown.css'
 
 /**
- * Counts down to the target date. If the date has already passed this year,
- * it automatically rolls forward to the same day next year — so the site keeps
- * working every birthday without anyone editing it.
+ * Counts down to the target date. Once that date has gone the countdown
+ * stops for good — it does not roll forward to the same day next year,
+ * because this page is about one particular birthday.
  */
-function nextOccurrence(dateStr) {
+function targetDate(dateStr) {
   const [y, m, d] = dateStr.split('-').map(Number)
-  const now = new Date()
-  let target = new Date(y, m - 1, d, 0, 0, 0, 0)
-  while (target.getTime() < now.getTime() - 86400000) {
-    target = new Date(target.getFullYear() + 1, m - 1, d, 0, 0, 0, 0)
-  }
-  return target
+  return new Date(y, m - 1, d, 0, 0, 0, 0)
 }
 
 function diff(target) {
@@ -28,24 +23,45 @@ function diff(target) {
   }
 }
 
-function isBirthdayToday(target) {
+/* 'before' while the day is still coming, 'today' on the day itself, and
+   'after' once it has gone. Compared whole day to whole day, so the birthday
+   reads as 'today' from midnight to midnight. Home reads this too, to title
+   the band. */
+export function birthdayState(dateStr) {
+  const target = targetDate(dateStr)
   const now = new Date()
-  return (
-    now.getDate() === target.getDate() && now.getMonth() === target.getMonth()
-  )
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  if (today.getTime() < target.getTime()) return 'before'
+  if (today.getTime() === target.getTime()) return 'today'
+  return 'after'
 }
 
 export default function Countdown({ date, label = 'until your birthday' }) {
-  const [target] = useState(() => nextOccurrence(date))
+  const [target] = useState(() => targetDate(date))
   const [t, setT] = useState(() => diff(target))
-  const today = isBirthdayToday(target)
+  const state = birthdayState(date)
 
   useEffect(() => {
+    /* nothing left to count once the day has gone, and 'after' is the last
+       state there is — so the ticker retires rather than run forever. */
+    if (state === 'after') return undefined
     const id = setInterval(() => setT(diff(target)), 1000)
     return () => clearInterval(id)
-  }, [target])
+  }, [target, state])
 
-  if (today) {
+  if (state === 'after') {
+    return (
+      <div className="cd cd--today">
+        <p className="eyebrow">That was your day</p>
+        <p className="cd__today-text display">Hope it was everything. 🎉</p>
+        <p className="cd__label">
+          The page is staying up. Come back whenever you want.
+        </p>
+      </div>
+    )
+  }
+
+  if (state === 'today') {
     return (
       <div className="cd cd--today">
         <p className="eyebrow">The day is here</p>

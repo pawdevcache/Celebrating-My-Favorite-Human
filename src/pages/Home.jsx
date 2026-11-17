@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import Countdown from '../components/Countdown'
+import Countdown, { birthdayState } from '../components/Countdown'
 import FloatingHearts from '../components/FloatingHearts'
 import Sparkles from '../components/Sparkles'
 import NotOut from '../components/NotOut'
@@ -46,6 +46,10 @@ const fadeUp = {
 }
 
 export default function Home() {
+  /* The band's title has to follow the countdown — "Counting down to the
+     13th" over a panel saying the day has gone would read as a bug. */
+  const bday = birthdayState(him.birthday)
+
   return (
     <>
       {/* ---------------- HERO ---------------- */}
@@ -151,7 +155,15 @@ export default function Home() {
           >
             <p className="eyebrow">The big day</p>
             <h2 className="countdown-band__title display">
-              Counting down to the 13<sup>th</sup>
+              {bday === 'after' ? (
+                <>
+                  The 13<sup>th</sup> came and went
+                </>
+              ) : (
+                <>
+                  Counting down to the 13<sup>th</sup>
+                </>
+              )}
             </h2>
             <Countdown date={him.birthday} label="until your birthday" />
           </motion.div>
